@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 //import quotes from "./assets/quotes.json"
-import Button from "./assets/Button.jsx";
+// import Button from "./assets/Button.jsx";
 import {FaTwitter, FaQuoteLeft, FaQuoteRight} from "react-icons/fa";
 import './App.css';
 
@@ -37,7 +37,7 @@ function App() {
   const [randomColor, setRandomColor] = useState(getRandomColor())
 
   const getRandomQuote = async () => {
-    const result = await fetch(
+     await fetch(
       "https://api.quotable.io/random"
       ).then((res) => res.json())
       .then((result) => setQuote(result));
