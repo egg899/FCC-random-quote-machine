@@ -1,19 +1,19 @@
 import { useEffect, useState } from 'react';
-//import quotes from "./assets/quotes.json"
+import {quotes} from "./assets/quotes.json"
 // import Button from "./assets/Button.jsx";
 import {FaTwitter, FaQuoteLeft, FaQuoteRight} from "react-icons/fa";
 import './App.css';
 
 
 
-// interface Quote {
-//   quote: string;
-//   author:string;
-// }
+interface Quote {
+  quote: string;
+  author:string;
+}
 
-// const getRandomQuote = (): Quote => {
-//   return quotes[Math.floor(Math.random()*quotes.length)]
-// } 
+const getRandomQuote = (): Quote => {
+  return quotes[Math.floor(Math.random()*quotes.length)]
+} 
 
 
 const getRandomColor = () => {
@@ -29,22 +29,24 @@ const getRandomColor = () => {
 
 
 
+  
+
 const transition = "all 1s";
 
 function App() {
-  // const [quote, setQuote] = useState<Quote>(getRandomQuote())
-  const [quote, setQuote] = useState([])
+   const [quote, setQuote] = useState<Quote>(getRandomQuote())
+  //const [quote, setQuote] = useState([])
   const [randomColor, setRandomColor] = useState(getRandomColor())
 
-  const getRandomQuote = async () => {
-     await fetch(
-      "https://api.quotable.io/random"
-      ).then((res) => res.json())
-      .then((result) => setQuote(result));
+  // const getRandomQuote = async () => {
+  //    await fetch(
+  //     "https://api.quotable.io/random"
+  //     ).then((res) => res.json())
+  //     .then((result) => setQuote(result));
 
     
     
-  }
+  // }
   
 
   
@@ -58,7 +60,8 @@ useEffect(() =>{
 }, [])
 
 const changeQuote = ()=>{
-  getRandomQuote();
+  //getRandomQuote();
+  setQuote(getRandomQuote());
   setRandomColor(getRandomColor());
 }
 
@@ -78,7 +81,7 @@ const changeQuote = ()=>{
        <h2 id="text">
        <FaQuoteLeft size="30" style={{marginRight: "10px"}}/>
          
-         {quote.content} 
+         {quote.quote} 
          <FaQuoteRight size="30" style={{marginLeft: "10px"}}/>
          </h2>
        
@@ -88,7 +91,7 @@ const changeQuote = ()=>{
 
 
     <div className="buttons">
-      <a href={`https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=${quote.content}${quote.author}`}
+      <a href={`https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=${quote.quote}${quote.author}`}
       id="tweet-quote" target="_blank" style={{backgroundColor:"#1DA1F2",marginRight: "10px"}}
       >
         <FaTwitter color="white"/>
