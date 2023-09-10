@@ -1,0 +1,58 @@
+
+body{
+    background: url("https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067_640.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.background{
+    margin:0;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    /* background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3sJu7zT0kGHsJwmxt8HHFDevF_uKUHURoW2g0FI2K&s");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index:-1000px; */
+}
+
+#quote-box{
+    width:500px;
+    margin: 15vh auto 0px auto;
+    min-height: 40v;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+    text-align: left;
+    background-color: white;
+    border-radius:8px;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.618);
+}
+
+
+.quote-content{
+min-height:30vh;
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+margin:10px;
+}
+
+
+#author{
+text-align: right;
+}
+
+button, a {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding:0.6em 1.2em;
+    width: fit-content;
+    font-weight: 500;
+    background:#1a1a1a;
+    cursor: pointer;
+    color:white;
+}
